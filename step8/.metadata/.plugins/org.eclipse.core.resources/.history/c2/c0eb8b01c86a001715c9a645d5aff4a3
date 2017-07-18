@@ -1,0 +1,64 @@
+import java.io.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+class RadixSort {
+	private LinkedList[] bucket;
+
+	public RadixSort() {
+		this.bucket = new LinkedList[] {};
+		for (int i = 0; i < 10; i++) {
+			this.bucket[i] = new LinkedList<Integer>();
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	public void sort(ArrayList<Integer> data, int maxRadix) {
+		int mod = 10;
+		int size = data.size();
+		int digit;
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < size; j++) {
+				if (mod == 10)
+					digit = data.get(i) % 10;
+				else
+					digit = data.get(i) / mod % 10;
+				bucket[digit].add(data.get(i));
+			}
+
+			data.clear();
+			for (int j = 0; j < 10; j++) {
+				if (bucket[i].isEmpty())
+					continue;
+				for (int k = 0; k < bucket[i].size(); k++) {
+					data.add((Integer) bucket[j].get(k));
+				}
+				bucket[i].clear();
+			}
+			mod *= 10;
+		}
+	}
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			int n;
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+			n = Integer.parseInt(br.readLine());
+
+			ArrayList<Integer> data = new ArrayList<Integer>();
+			for (int i = 0; i < n; i++)
+				data.add(Integer.parseInt(br.readLine()));
+
+			RadixSort r = new RadixSort();
+			r.sort(data, 0);
+			System.out.println(data);
+		} catch (IOException e) {
+
+		}
+	}
+
+}

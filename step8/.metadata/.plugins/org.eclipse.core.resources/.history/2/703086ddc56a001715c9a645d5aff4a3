@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.LinkedList;
+
+class RadixSort {
+	private LinkedList[] bucket;
+
+	public RadixSort() {
+		this.bucket = new LinkedList[] {};
+		for (int i = 0; i < 10; i++) {
+			this.bucket[i] = new LinkedList<Integer>();
+		}
+	}
+	
+	public void sort(int[] data, int maxRadix){
+		
+	}
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			int n;
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+			n = Integer.parseInt(br.readLine());
+
+			int[] data = new int[n];
+			for (int i = 0; i < n; i++)
+				data[i] = Integer.parseInt(br.readLine());
+
+			for (int i = 0; i < n; i++)
+				System.out.println(data[i]);
+		} catch (IOException e) {
+
+		}
+	}
+
+}

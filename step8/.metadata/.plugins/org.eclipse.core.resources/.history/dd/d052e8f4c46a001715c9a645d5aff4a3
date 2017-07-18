@@ -1,0 +1,58 @@
+import java.io.*;
+import java.util.LinkedList;
+
+public class Main {
+	private static LinkedList[] counter = new LinkedList[]{
+			new LinkedList<Integer>(),
+			new LinkedList<Integer>(),
+			new LinkedList<Integer>(),
+			new LinkedList<Integer>(),
+			new LinkedList<Integer>(),
+			new LinkedList<Integer>(),
+			new LinkedList<Integer>(),
+			new LinkedList<Integer>(),
+			new LinkedList<Integer>(),
+			new LinkedList<Integer>()
+	};
+	
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		int n;
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+		n = Integer.parseInt(br.readLine());
+
+		int[] data = new int[n];
+		for (int i = 0; i < n; i++)
+			data[i] = Integer.parseInt(br.readLine());
+		
+		for (int i = 0; i < n; i++)
+			System.out.println(data[i]);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public void radixSort(int[] data, int maxDigitSymbols){
+		int mod=10;
+		int dev=1;
+		 for (int i = 0; i < maxDigitSymbols; i++, dev *= 10, mod *= 10) {
+	            for (int j = 0; j < data.length; j++) {
+	                int bucket = (data[j] % mod) / dev;
+	                counter[bucket].add(data[j]);
+	            }
+	 
+	            int pos = 0;
+	 
+	            for (int j = 0; j < counter.length; j++) {
+	                Integer value = null;
+	                while ((value = (Integer) counter[j].poll()) != null) {
+	                    data[pos++] = value;
+	                }
+	 
+	            }
+	            System.out.println("기수 정렬 " + (i + 1) + " 단계:");
+	            
+	        }
+	 
+	    }
+	}
+
+}
