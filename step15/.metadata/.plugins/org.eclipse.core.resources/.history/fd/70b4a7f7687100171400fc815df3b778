@@ -1,0 +1,21 @@
+import java.io.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+			String[] sp = br.readLine().split(" ");
+			int n = Integer.parseInt(sp[0]);
+			int m = Integer.parseInt(sp[1]);
+			long[][] memo = new long[101][101];
+			memo[1][0] = 1;
+			memo[0][1] = 1;
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

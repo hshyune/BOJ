@@ -1,0 +1,59 @@
+import java.io.*;
+import java.util.*;
+
+class Head {
+	private int len;
+	private ArrayList<ArrayList<String>> list;
+
+	public Head(String str){
+		this.len = str.length();
+		this.list = new ArrayList<ArrayList<String>>();)
+	}
+
+	public ArrayList<String> getList() {
+		return this.list;
+	}
+
+	public int getLen() {
+		return len;
+	}
+}
+
+class Data {
+	ArrayList<Head> bucket;
+	
+	public Data() {
+		this.bucket = new ArrayList<Head>();
+	}
+
+	public void put(String str) {
+		int len = str.length();
+		
+	}
+
+	public void printAll() {
+		for (Map.Entry<Integer, ArrayList<String>> tmp : bucket.entrySet()) {
+			for (String str : tmp.getValue()) {
+				System.out.println(str);
+			}
+		}
+	}
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+			int n = Integer.parseInt(br.readLine());
+			Data data = new Data();
+			for (int i = 0; i < n; i++) {
+				data.put(br.readLine());
+			}
+			data.printAll();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

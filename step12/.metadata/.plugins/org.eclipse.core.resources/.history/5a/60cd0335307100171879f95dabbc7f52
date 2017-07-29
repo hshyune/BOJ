@@ -1,0 +1,76 @@
+import java.io.*;
+import java.util.*;
+
+class Task {
+	int priority;
+	boolean select;
+
+	public Task(int p, boolean s) {
+		this.priority = p;
+		this.select = s;
+	}
+
+	public void setSelect() {
+		this.select = true;
+	}
+
+	public int getInt() {
+		return this.priority;
+	}
+
+	public boolean getSelect() {
+		return this.select;
+	}
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+			int testcase = Integer.parseInt(br.readLine());
+			for (int i = 0; i < testcase; i++) {
+				String buf = br.readLine();
+				String[] sp = buf.split(" ");
+				int size = Integer.parseInt(sp[0]);
+				int want = Integer.parseInt(sp[1]);
+
+				buf = br.readLine();
+				sp = buf.split(" ");
+				ArrayList<Task> q = new ArrayList<Task>();
+				for (int j = 0; j < size; j++) {
+					q.add(new Task(Integer.parseInt(sp[j]), false));
+				}
+				q.get(want).setSelect();
+
+				int out = 0;
+				while (!q.isEmpty()) {
+					boolean pass = false;
+					Task t = q.remove(0);
+					
+					} else {
+						for (Task tmp : q) {
+							if (tmp.getInt() > t.getInt()) {
+								q.add(t);
+								pass = true;
+								break;
+							}
+						}
+						if (pass) {
+							continue;
+						} else {
+							q.remove(0);
+							out++;
+							break;
+						}
+					}
+				}
+				System.out.println(out);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

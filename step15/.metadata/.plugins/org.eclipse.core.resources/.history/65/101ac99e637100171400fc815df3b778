@@ -1,0 +1,30 @@
+import java.io.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+			String str = br.readLine();
+			String[] sp = str.split(" ");
+			int n = Integer.parseInt(sp[0]);
+			int k = Integer.parseInt(sp[1]);
+			long[][] arr = new long[1001][1001];
+			arr[0][0] = 1;
+			arr[1][0] = 1;
+			arr[0][1] = 1;
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static long dif(long[][] arr, int n, int k) {
+		if (n == k || k == 0)
+			return 1;
+		return dif(arr, n - 1, k - 1) + dif(arr, n - 1, k);
+
+	}
+
+}

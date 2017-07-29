@@ -1,0 +1,53 @@
+import java.io.*;
+
+class Queue {
+	int max;
+	int[] data;
+	int front;
+	int end;
+
+	public Queue() {
+		max = 10000;
+		data = new int[max];
+		front = -1;
+		end = -1;
+	}
+
+	public void push(int num) {
+		if (end == max - 1)
+			return;
+		data[++end] = num;
+	}
+
+	public int pop() {
+		if (front == end)
+			return -1;
+		data[++front] = num;
+	}
+
+	public int size() {
+		return end - front + 1;
+	}
+	
+	public int empty(){
+		if(front==end) return 1;
+		return 0;
+	}
+	
+	public void 
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+			int cmd = Integer.parseInt(br.readLine());
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

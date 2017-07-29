@@ -1,0 +1,49 @@
+import java.io.*;
+
+class Dequeue {
+	int max;
+	int[] arr;
+	int front;
+	int back;
+
+	public Dequeue() {
+		max = 10000;
+		arr = new int[max * 2];
+		front = max;
+		back = max;
+	}
+
+	private void push_front(int x) {
+		if (front == -1) {
+			return;
+		} else {
+			arr[front--] = x;
+		}
+	}
+
+	private void push_back(int x) {
+		if (back == max * 2 - 1) {
+			return;
+		} else {
+			arr[back++] = x;
+		}
+	}
+
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+			int n = Integer.parseInt(br.readLine());
+			for (int i = 0; i < n; i++) {
+
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}
