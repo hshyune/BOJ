@@ -1,0 +1,26 @@
+import java.io.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+			int n = Integer.parseInt(br.readLine());
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static int pib(int n) {
+		
+		if(n==0)
+		int[] arr = new int[n + 1];
+		for (int i = 3; i <= n; i++) {
+			arr[i] = arr[i - 1] + arr[i - 2];
+		}
+		return arr[n];
+	}
+
+}

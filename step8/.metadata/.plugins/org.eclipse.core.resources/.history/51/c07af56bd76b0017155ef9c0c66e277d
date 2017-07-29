@@ -1,0 +1,49 @@
+import java.io.*;
+import java.util.*;
+
+class Data {
+	HashMap<Integer, ArrayList<String>> bucket;
+
+	public Data() {
+		bucket = new HashMap<Integer, ArrayList<String>>();
+	}
+
+	public void put(String str) {
+		int len = str.length();
+		if (!bucket.containsKey(len)) {
+			ArrayList<String> tmp = new ArrayList<String>();
+			tmp.add(str);
+			bucket.put(len, tmp);
+		} else {
+			ArrayList<String> tmp = bucket.get(len);
+			if (tmp.contains(str)) {
+				return;
+			} else {
+				tmp.add(str);
+				Collections.sort(tmp);
+			}
+		}
+	}
+
+	public void printAll() {
+		for (Map.Entry<Integer, ArrayList<String>> tmp : bucket.entrySet()) {
+			for (String str : tmp.getValue()) {
+				System.out.println(str);
+			}
+		}
+	}
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+			int n = Integer.parseInt(br.readLine());
+			Data d = new Data();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

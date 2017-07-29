@@ -1,0 +1,28 @@
+import java.io.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+			int n = Integer.parseInt(br.readLine());
+			long[] memo = new long[n + 1];
+			memo[0] = 1;
+			for (int i = 1; i <= n; i++) {
+				memo[i] = i * memo[i - 1];
+			}
+			int cnt = 0;
+			for (int i = n; i >= 0; i++) {
+				if (memo[i] % 10 == 0) {
+					break;
+				}
+				cnt++;
+			}
+			System.out.println(cnt);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

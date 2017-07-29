@@ -1,0 +1,65 @@
+import java.io.*;
+import java.util.*;
+
+class Data {
+
+	@SuppressWarnings("unchecked")
+	public static LinkedList<Integer>[] bucket = new LinkedList[] { new LinkedList<Integer>(),
+			new LinkedList<Integer>(), new LinkedList<Integer>(), new LinkedList<Integer>(), new LinkedList<Integer>(),
+			new LinkedList<Integer>(), new LinkedList<Integer>(), new LinkedList<Integer>(), new LinkedList<Integer>(),
+			new LinkedList<Integer>() };
+
+	public Data() {
+
+	}
+
+	public void put(ArrayList<Integer> data, int radix) {
+		for (int num : data) {
+			int key = num / radix % 10;
+			bucket[key].add(num);
+		}
+
+		int index = 0;
+
+		for (int i = 0; i < 10; i++) {
+			System.out.println(bucket[i]);
+			if (bucket[i].isEmpty())
+				continue;
+			for (int num : bucket[i]) {
+				data.set(index++, num);
+			}
+			bucket[i].clear();
+		}
+
+	}
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+			int n = Integer.parseInt(br.readLine());
+			ArrayList<Integer> data = new ArrayList<Integer>();
+			int maxRadix = 0;
+			for (int i = 0; i < n; i++) {
+				String str = br.readLine();
+				if (maxRadix < str.length())
+					maxRadix = str.length();
+				data.add(Integer.parseInt(str));
+			}
+			Data d = new Data();
+			int radix = 1;
+			for (int i = 0; i < maxRadix; i++) {
+				d.put(data, radix);
+				radix *= 10;
+			}
+			
+			System.out.println(data);
+		} catch (IOException e) {
+
+		}
+	}
+
+}

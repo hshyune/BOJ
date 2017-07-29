@@ -1,0 +1,25 @@
+import java.io.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+			int n = Integer.parseInt(br.readLine());
+			long mod = 1000000;
+			long p = mod / (10 * 15);
+			long[] fib = new long[p];
+			fib[0] = 0;
+			fib[1] = 1;
+			for (int i = 2; i < p; i++) {
+				fib[i] = fib[i - 1] + fib[i - 2];
+				fib[i] = fib[i] % mod;
+			}
+			System.out.println(fib[n % p]);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

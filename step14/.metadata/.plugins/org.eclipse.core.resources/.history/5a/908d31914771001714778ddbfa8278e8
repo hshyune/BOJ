@@ -1,0 +1,19 @@
+import java.io.*;
+
+public class Main {
+
+	int f0=0;
+	int f1=0;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+			int n = Integer.parseInt(br.readLine());
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

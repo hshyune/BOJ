@@ -1,0 +1,92 @@
+import java.io.*;
+
+class Queue {
+	int max;
+	int[] data;
+	int front;
+	int end;
+
+	public Queue() {
+		max = 10000;
+		data = new int[max];
+		front = -1;
+		end = -1;
+	}
+
+	public void push(int num) {
+		if (end == max - 1)
+			return;
+		data[++end] = num;
+	}
+
+	public int pop() {
+		if (front == end)
+			return -1;
+		return data[++front];
+	}
+
+	public int size() {
+		return end - front + 1;
+	}
+
+	public int empty() {
+		if (front == end)
+			return 1;
+		return 0;
+	}
+
+	public int front() {
+		if (front == end || front == -1)
+			return -1;
+		return data[front+1];
+	}
+
+	public int end() {
+		if (front == end || end == -1)
+			return -1;
+		return data[end+1];
+	}
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+			int cmd = Integer.parseInt(br.readLine());
+
+			Queue q = new Queue();
+			for (int i = 0; i < cmd; i++) {
+				String str = br.readLine();
+				String[] s = str.split(" ");
+				if (s.length == 1) {
+					if (s[0].equals("pop")) {
+						System.out.println(q.pop());
+					}
+					if (s[0].equals("size")) {
+						System.out.println(q.size());
+					}
+					if (s[0].equals("empty")) {
+						System.out.println(q.empty());
+					}
+					if (s[0].equals("front")) {
+						System.out.println(q.front());
+					}
+					if (s[0].equals("back")) {
+						System.out.println(q.end());
+					}
+				}
+				if (s.length == 2) {
+					if (s[0].equals("push")) {
+						int para = Integer.parseInt(s[1]);
+						q.push(para);
+					}
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

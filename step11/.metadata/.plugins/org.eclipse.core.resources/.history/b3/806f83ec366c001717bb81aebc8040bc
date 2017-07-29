@@ -1,0 +1,29 @@
+import java.io.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+			int cmd = Integer.parseInt(br.readLine());
+
+			String str = null;
+			Stack s = new Stack();
+			for (int i = 0; i < cmd; i++) {
+				str = br.readLine();
+
+				if (str.contains(" ")) {
+					String s1[] = str.split(" ");
+					s.cmd2(s1[0], Integer.parseInt(s1[1]));
+				}
+				else{
+					System.out.println(s.cmd1(str));
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

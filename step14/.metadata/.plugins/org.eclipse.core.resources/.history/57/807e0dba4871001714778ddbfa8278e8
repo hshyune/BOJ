@@ -1,0 +1,18 @@
+import java.io.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+			String buf = br.readLine();
+			String[] sp = buf.split(" ");
+			int n = sp[0];
+			int r = sp[1];
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}
