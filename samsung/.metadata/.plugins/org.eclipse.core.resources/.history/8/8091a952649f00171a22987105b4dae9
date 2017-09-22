@@ -1,0 +1,55 @@
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
+public class Main {
+	static int cnt = 0;
+	static ArrayList<String> list = null;
+
+	OutputStreamWriter out = new OutputStreamWriter(System.out);
+	BufferedWriter bw = new BufferedWriter(out);
+	PrintWriter pw = new PrintWriter(bw);
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			long start = System.currentTimeMillis();
+			InputStreamReader in = new InputStreamReader(System.in);
+			BufferedReader br = new BufferedReader(in, 1);
+			int n = Integer.parseInt(br.readLine());
+			list = new ArrayList<String>();
+			char[] arr = new char[n];
+			for (int i = 0; i < n; i++) {
+				arr[i] = (char) (i + '1');
+			}
+			perm(arr, 0);
+
+			Collections.sort(list);
+			// System.out.println(list.size());
+			// System.out.println(list);
+			System.out.println(System.currentTimeMillis() - start);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void swap(char[] arr, int i, int j) {
+		char tmp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = tmp;
+	}
+
+	public static void perm(char[] arr, int pos) {
+		if (pos == arr.length) {
+			// System.out.println(arr);
+			// list.add(arr2Int(arr));
+		} else {
+			for (int i = pos; i < arr.length; i++) {
+				swap(arr, pos, i);
+				perm(arr, pos + 1);
+				swap(arr, pos, i);
+			}
+		}
+	}
+}

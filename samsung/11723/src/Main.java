@@ -16,30 +16,34 @@ public class Main {
 
 			OutputStreamWriter out = new OutputStreamWriter(System.out);
 			BufferedWriter bw = new BufferedWriter(out);
+			PrintWriter pw = new PrintWriter(bw);
 
 			for (long iter = 0; iter < n; iter++) {
 				String[] sp = br.readLine().split(" ");
-				if (sp[0].equals("add")) {
-					add(Integer.parseInt(sp[1]));
-				}
-				if (sp[0].equals("remove")) {
-					remove(Integer.parseInt(sp[1]));
-				}
-				if (sp[0].equals("check")) {
-					bw.write(sp[1]);
-					bw.flush();
-				}
-				if (sp[0].equals("toggle")) {
-					toggle(Integer.parseInt(sp[1]));
-				}
-				if (sp[0].equals("all")) {
-					all();
-				}
-				if (sp[0].equals("empty")) {
+				switch (sp[0].charAt(0)) {
+				case 'a':
+					if (sp.length == 2) {
+						add(Integer.parseInt(sp[1]) - 1);
+					} else {
+						all();
+					}
+					break;
+				case 'r':
+					remove(Integer.parseInt(sp[1]) - 1);
+					break;
+				case 'c':
+					pw.write(Integer.toString(check(sp[1]))+"\n");
+
+					break;
+				case 't':
+					toggle(Integer.parseInt(sp[1]) - 1);
+					break;
+				case 'e':
 					empty();
+					break;
 				}
 			}
-			bw.close();
+			pw.close();
 			br.close();
 
 		} catch (IOException e) {
@@ -48,7 +52,6 @@ public class Main {
 	}
 
 	public static void add(int num) {
-		num--;
 		if (arr[num] == EMPTY) {
 			arr[num] = EXIST;
 		}
@@ -61,7 +64,7 @@ public class Main {
 	}
 
 	public static int check(String str) {
-		int num = Integer.parseInt(str);
+		int num = Integer.parseInt(str) - 1;
 		if (arr[num] == EXIST) {
 			return EXIST;
 		} else {
