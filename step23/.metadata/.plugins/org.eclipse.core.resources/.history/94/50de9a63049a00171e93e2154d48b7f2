@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+
+class Node {
+	int num;
+	Node parent;
+	ArrayList<Node> child;
+	int weight;
+
+	public Node(int num) {
+		this.num = num;
+		this.parent = null;
+		this.child = new ArrayList<Node>();
+		weight = 0;
+	}
+}
+
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		InputStreamReader in = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(in, 1);
+		int edges = Integer.parseInt(br.readLine());
+		// set root node
+		String[] sp = br.readLine().split(" ");
+		Node root = new Node(1);
+		int cnt = 0;
+		int nodeNum = 0, w = 0;
+		do {
+			cnt++;
+			nodeNum = Integer.parseInt(sp[1]);
+			w = Integer.parseInt(sp[2]);
+			root.addChild(new Node(), w);
+		} while (sp[0].equals("1"));
+
+		root.print();
+
+	}
+
+}

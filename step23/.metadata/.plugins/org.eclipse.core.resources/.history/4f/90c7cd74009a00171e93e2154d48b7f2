@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+
+class Node {
+	int num;
+	Node parent;
+	ArrayList<Node> child;
+	int weight;
+
+	public Node(int num) {
+		this.num = num;
+		this.parent = null;
+		this.child = new ArrayList<Node>();
+		weight = 0;
+	}
+
+	public void addChild(Node n, int w) {
+		// w=weight
+		for (Node node : child) {
+			if (node.num == n.num)
+				return;
+		}
+
+		n.weight = w;
+		child.add(n);
+	}
+}
+
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		InputStreamReader in = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(in, 1);
+		int nodes = Integer.parseInt(br.readLine());
+	}
+
+}

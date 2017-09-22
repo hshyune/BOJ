@@ -1,0 +1,50 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+	final static int EMPTY = 0;
+	final static int EXIST = 1;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			InputStreamReader in = new InputStreamReader(System.in);
+			BufferedReader br = new BufferedReader(in, 1);
+			int n = Integer.parseInt(br.readLine());
+
+			int[] arr = new int[20];
+			for (int iter = 0; iter < n; iter++) {
+				String[] sp = br.readLine().split("");
+				if (sp[0].equals("add")) {
+					int tmp = Integer.parseInt(sp[1]);
+					if (arr[tmp - 1] != EMPTY) {
+						arr[tmp - 1] = EXIST;
+					}
+				}
+				if (sp[0].equals("remove")) {
+					int tmp = Integer.parseInt(sp[1]);
+					if (arr[tmp - 1] == EXIST) {
+						arr[tmp - 1] = EMPTY;
+					}
+				}
+				if (sp[0].equals("check")) {
+
+				}
+				if (sp[0].equals("toggle")) {
+
+				}
+				if (sp[0].equals("all")) {
+
+				}
+				if (sp[0].equals("empty")) {
+
+				}
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

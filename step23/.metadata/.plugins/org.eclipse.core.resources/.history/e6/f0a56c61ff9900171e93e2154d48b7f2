@@ -1,0 +1,15 @@
+import java.io.*;
+import java.util.*;
+
+class Node {
+
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

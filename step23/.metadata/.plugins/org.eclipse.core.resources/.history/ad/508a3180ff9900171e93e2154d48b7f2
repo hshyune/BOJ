@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.*;
+
+class Node {
+	int num;
+	Node parent;
+	HashMap<Node, Integer> child;
+
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

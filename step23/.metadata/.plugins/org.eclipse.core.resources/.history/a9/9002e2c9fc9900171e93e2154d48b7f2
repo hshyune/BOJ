@@ -1,0 +1,80 @@
+import java.util.*;
+import java.io.*;
+
+public class Main {
+
+	public static int[][] adj, weight;
+	public static int nV;
+	public static boolean[] visited;
+	public static int max;
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		InputStreamReader in = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(in, 1);
+		nV = Integer.parseInt(br.readLine()) + 1;
+		max = 0;
+		adj = new int[nV][nV];
+		weight = new int[nV][nV];
+
+		visited = new boolean[nV];
+
+		for (int i = 0; i < nV; i++) {
+			String[] sp = br.readLine().split(" ");
+			int nCh = (sp.length - 2) / 2;
+			// System.out.println((i + 1) + " " + nCh);
+
+			for (int j = 0; j < nCh; j++) {
+				int child = Integer.parseInt(sp[j * 2 + 1]);
+				adj[i + 1][child] = 1;
+				weight[i + 1][child] = Integer.parseInt(sp[(j + 1) * 2]);
+			}
+		}
+
+		for (int i = 1; i < nV; i++) {
+			for (int j = 1; j < nV; j++) {
+				System.out.print(adj[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+		System.out.println();
+
+		// for (int i = 1; i < nV; i++) {
+		// for (int j = 1; j < nV; j++) {
+		// System.out.print(weight[i][j] + " ");
+		// }
+		// System.out.println();
+		// }
+
+		dfs(1);
+	}
+
+	public static void dfs(int node) {
+		visited[node] = true;
+
+		// check leaf node
+		boolean leaf = false;
+		int chk = 0;
+		int adjnum = 0;
+		for (int i = 1; i < nV; i++) {
+			if (adj[node][i] == 1) {
+				adjnum++;
+				if (visited[i]) {
+					chk++;
+				}
+			}
+		}
+		if(adjnum==chk)
+			System.out.println("leaf node");
+		//System.out.println("node " + node + " : adj " + adjnum + " / " + "chk " + chk);
+
+		for (int k = 1; k < nV; k++) {
+			if (adj[node][k] == 1 && !visited[k]) {
+				System.out.println(node + " to " + k + " : " + weight[node][k]);
+				dfs(k);
+			}
+		}
+	}
+
+}

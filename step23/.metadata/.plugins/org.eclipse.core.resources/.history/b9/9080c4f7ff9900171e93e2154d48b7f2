@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+
+class Node {
+	int num;
+	Node parent;
+	ArrayList<Node> child;
+
+	public Node(int num) {
+		this.num = num;
+		this.parent = null;
+		this.child = new ArrayList<Node>();
+	}
+
+	public void addChild(Node n, int w) {
+		// w=weight
+
+	}
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

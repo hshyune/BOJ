@@ -1,0 +1,61 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			InputStreamReader in = new InputStreamReader(System.in);
+			BufferedReader br = new BufferedReader(in, 1);
+			int n = Integer.parseInt(br.readLine());
+
+			ArrayList<Integer> list = new ArrayList<Integer>();
+			String[] sp = null;
+			for (int i = 0; i < n; i++) {
+				sp = br.readLine().split("");
+				if (sp[0].equals("add")) {
+					int tmp = Integer.parseInt(sp[1]);
+					if (!list.contains(tmp)) {
+						list.add(tmp);
+					}
+				}
+				if (sp[0].equals("remove")) {
+					int tmp = Integer.parseInt(sp[1]);
+					if (!list.contains(tmp)) {
+						list.add(tmp);
+					}
+				}
+				if (sp[0].equals("check")) {
+					int tmp = Integer.parseInt(sp[1]);
+					if (list.contains(tmp)) {
+						System.out.println("1");
+					} else {
+						System.out.println("0");
+					}
+				}
+				if (sp[0].equals("toggle")) {
+					int tmp = Integer.parseInt(sp[1]);
+					if (list.contains(tmp)) {
+						for (int i = 0; i < list.size(); i++) {
+							if (list.get(i) == tmp) {
+								list.remove(i);
+							}
+						}
+					} else {
+						list.add(tmp);
+					}
+				}
+				if (sp[0].equals("all")) {
+
+				}
+				if (sp[0].equals("empty")) {
+
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}
