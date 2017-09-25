@@ -41,26 +41,26 @@ class Remote {
 		this.broken = broken;
 	}
 
-	public int find() {
-		int direct = Math.abs(channel - cur);
-		int near = 1000000;
-		int min = 1000000;
-		for (int i = 0; i <= 1000000; i++) {
+	public long find() {
+		long direct = Math.abs(channel - cur);
+		long near = 1000000;
+		long min = 1000000;
+		for (long i = 0; i < 1000001; i++) {
 			if (check(i)) {
 				if (Math.abs(i - channel) < Math.abs(near - channel)) {
 					near = i;
 				}
 			}
 		}
-		//System.out.println("near channel: " + near);
-		int res = getDigit(near) + Math.abs(near - channel);
+		// System.out.println("near channel: " + near);
+		long res = getDigit(near) + Math.abs(near - channel);
 		return Math.min(res, direct);
 	}
 
-	public boolean check(int num) {
+	public boolean check(long num) {
 		int size = getDigit(num);
 		for (int i = 0; i < size; i++) {
-			if (broken[num % 10] == 1) {
+			if (broken[(int) (num % 10)] == 1) {
 				return false;
 			}
 			num /= 10;
@@ -68,7 +68,7 @@ class Remote {
 		return true;
 	}
 
-	public int getDigit(int num) {
+	public int getDigit(long num) {
 		int len = 1;
 		while (num != 0) {
 			num = num / 10;
