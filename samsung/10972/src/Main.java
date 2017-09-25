@@ -1,41 +1,101 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {
-			long start = System.currentTimeMillis();
 			InputStreamReader in = new InputStreamReader(System.in);
 			BufferedReader br = new BufferedReader(in, 1);
 			int n = Integer.parseInt(br.readLine());
-			int k = 0;
-			int j = 0;
+
 			int[] arr = new int[n];
-			String[] sp = new String[n];
+			int[] cmp = new int[n];
+			String[] sp = br.readLine().split(" ");
+
+			int flag = 0;
 			for (int i = 0; i < n; i++) {
-				arr[i] = Integer.parseInt(sp[i]);
+				arr[i] = i + 1;
+				cmp[i] = Integer.parseInt(sp[i]);
+				if (cmp[i] == n - i)
+					flag++;
+			}
+			if (flag == n) {
+				System.out.println(-1);
+				System.exit(0);
 			}
 
-			// find k
-			for (int i = 0; i < n + 1; i++) {
-				if (arr[i] < arr[i + 1]) {
-					if (i > k) {
-						k = i;
-					}
-				}
-			}
+			Permu p = new Permu(n, cmp);
+			p.permu(arr, 0, n, n);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
+}
 
-	public static void swap(char[] arr, int i, int j) {
-		char tmp = arr[i];
-		arr[i] = arr[j];
-		arr[j] = tmp;
+class Permu {
+	private int size;
+	private int[] cmp = null;
+	private boolean flag = false;
+
+	public Permu(int size, int[] cmp) {
+		this.size = size;
+		this.cmp = cmp;
+	}
+
+	public void rotateRight(int[] arr, int start, int end) {
+		int last = arr[end];
+		for (int i = end; i > start; i--) {
+			arr[i] = arr[i - 1];
+		}
+		arr[start] = last;
+	}
+
+	public void rotateLeft(int[] arr, int start, int end) {
+		int first = arr[start];
+		for (int i = start; i < end; i++) {
+			arr[i] = arr[i + 1];
+		}
+		arr[end] = first;
+	}
+
+	public void permu(int[] arr, int depth, int n, int k) throws IOException {
+		if (depth == k) {
+			if (flag) {
+				print(arr);
+				System.exit(0);
+			}
+			if (equal(arr)) {
+				flag = true;
+				// print(arr);
+			}
+			// print(arr);
+			return;
+		}
+		for (int i = depth; i < n; i++) {
+			rotateRight(arr, depth, i);
+			permu(arr, depth + 1, n, k);
+			rotateLeft(arr, depth, i);
+		}
+	}
+
+	public void print(int[] arr) throws IOException {
+		OutputStreamWriter out = new OutputStreamWriter(System.out);
+		BufferedWriter bw = new BufferedWriter(out);
+		PrintWriter pw = new PrintWriter(bw);
+		int size = arr.length;
+		for (int i = 0; i < size - 1; i++) {
+			pw.print(arr[i] + " ");
+		}
+		pw.println(arr[size - 1]);
+		pw.close();
+	}
+
+	public boolean equal(int[] arr) {
+		for (int i = 0; i < this.size; i++) {
+			if (cmp[i] != arr[i])
+				return false;
+		}
+		return true;
 	}
 }

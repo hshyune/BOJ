@@ -209,3 +209,207 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2017-09-25 11:02:08.785 -----------------------------------------------
+eclipse.buildId=4.7.0.I20170612-0950
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product -data C:\Users\hyun3\Documents\GitHub\BOJ\samsung -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-09-25 11:02:15.792
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-09-25 11:02:28.628
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\hyun3'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2017-09-25 11:02:29.862
+!MESSAGE Removing part descriptor with the 'org.eclipse.wb.core.StructureView' id and the 'Structure' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2017-09-25 11:02:30.098
+!MESSAGE Removing part descriptor with the 'org.eclipse.wb.core.PaletteView' id and the 'Palette' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2017-09-25 11:02:31.483
+!MESSAGE Removing part descriptor with the 'org.eclipse.wst.internet.monitor.view' id and the 'TCP/IP Monitor' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2017-09-25 11:02:32.066
+!MESSAGE Removing part descriptor with the 'org.eclipse.wst.jsdt.ui.TypeHierarchy' id and the 'Hierarchy' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2017-09-25 11:02:32.199
+!MESSAGE Removing part descriptor with the 'org.eclipse.wst.jsdt.ui.PackageExplorer' id and the 'Script Explorer' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2017-09-25 11:02:32.209
+!MESSAGE Removing part descriptor with the 'org.eclipse.wst.jsdt.callhierarchy.view' id and the 'Call Hierarchy' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2017-09-25 11:02:32.223
+!MESSAGE Removing part descriptor with the 'org.eclipse.wst.jsdt.ui.SourceView' id and the 'Declaration' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2017-09-25 11:02:32.252
+!MESSAGE Removing part descriptor with the 'org.eclipse.wst.jsdt.ui.JavadocView' id and the 'Documentation' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2017-09-25 11:02:32.350
+!MESSAGE Removing part descriptor with the 'org.eclipse.wst.server.ui.ServersView' id and the 'Servers' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.recommenders.types.rcp 1 4 2017-09-25 11:35:24.328
+!MESSAGE Full project indexing required:
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\charsets.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\access-bridge-64.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\cldrdata.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\dnsns.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jaccess.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jfxrt.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\localedata.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\nashorn.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunec.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunjce_provider.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunmscapi.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunpkcs11.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\zipfs.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\jce.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfr.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\jsse.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\resources.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\rt.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\ext\dnsns.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\ext\sunmscapi.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\ext\nashorn.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\jfr.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\ext\jfxrt.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\ext\zipfs.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\ext\mysql-connector-java-5.1.42-bin.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\resources.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\ext\sunec.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\charsets.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\ext\access-bridge-64.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\ext\jaccess.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\jsse.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\jce.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\ext\sunpkcs11.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\ext\cldrdata.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\rt.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\ext\localedata.jar
+  [-] C:\Program Files\Java\jre1.8.0_131\lib\ext\sunjce_provider.jar
+
+!STACK 0
+org.eclipse.recommenders.utils.Logs$LogTraceException
+	at org.eclipse.recommenders.utils.Logs$LogTraceException.newTrace(Logs.java:381)
+	at org.eclipse.recommenders.utils.Logs.log(Logs.java:134)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.needsRebuild(ProjectTypesIndex.java:169)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.startUp(ProjectTypesIndex.java:122)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.recommenders.types.rcp 1 4 2017-09-25 14:08:23.179
+!MESSAGE Full project indexing required:
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\charsets.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\access-bridge-64.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\cldrdata.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\dnsns.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jaccess.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jfxrt.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\localedata.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\nashorn.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunec.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunjce_provider.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunmscapi.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunpkcs11.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\zipfs.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\jce.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfr.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\jsse.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\resources.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\rt.jar
+
+!STACK 0
+org.eclipse.recommenders.utils.Logs$LogTraceException
+	at org.eclipse.recommenders.utils.Logs$LogTraceException.newTrace(Logs.java:381)
+	at org.eclipse.recommenders.utils.Logs.log(Logs.java:134)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.needsRebuild(ProjectTypesIndex.java:169)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.startUp(ProjectTypesIndex.java:122)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.recommenders.types.rcp 1 4 2017-09-25 14:23:34.226
+!MESSAGE Full project indexing required:
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\charsets.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\access-bridge-64.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\cldrdata.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\dnsns.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jaccess.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jfxrt.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\localedata.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\nashorn.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunec.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunjce_provider.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunmscapi.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunpkcs11.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\zipfs.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\jce.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfr.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\jsse.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\resources.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\rt.jar
+
+!STACK 0
+org.eclipse.recommenders.utils.Logs$LogTraceException
+	at org.eclipse.recommenders.utils.Logs$LogTraceException.newTrace(Logs.java:381)
+	at org.eclipse.recommenders.utils.Logs.log(Logs.java:134)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.needsRebuild(ProjectTypesIndex.java:169)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.startUp(ProjectTypesIndex.java:122)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.recommenders.types.rcp 1 4 2017-09-25 15:03:50.453
+!MESSAGE Full project indexing required:
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\charsets.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\access-bridge-64.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\cldrdata.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\dnsns.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jaccess.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\jfxrt.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\localedata.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\nashorn.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunec.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunjce_provider.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunmscapi.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\sunpkcs11.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\ext\zipfs.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\jce.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\jfr.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\jsse.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\resources.jar
+  [+] C:\Program Files\Java\jdk1.8.0_144\jre\lib\rt.jar
+
+!STACK 0
+org.eclipse.recommenders.utils.Logs$LogTraceException
+	at org.eclipse.recommenders.utils.Logs$LogTraceException.newTrace(Logs.java:381)
+	at org.eclipse.recommenders.utils.Logs.log(Logs.java:134)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.needsRebuild(ProjectTypesIndex.java:169)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.startUp(ProjectTypesIndex.java:122)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Thread.java:748)
+!SESSION 2017-09-25 16:33:11.975 -----------------------------------------------
+eclipse.buildId=4.7.0.I20170612-0950
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-09-25 16:33:21.652
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-09-25 16:33:43.829
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\hyun3'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
