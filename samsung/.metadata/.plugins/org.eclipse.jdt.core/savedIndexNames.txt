@@ -6,4 +6,5 @@ INDEX VERSION 1.130+C:\Users\hyun3\Documents\GitHub\BOJ\samsung\.metadata\.plugi
 3582865171.index
 3401502453.index
 365181738.index
+1283948201.index
 260649714.index
