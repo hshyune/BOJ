@@ -3,11 +3,19 @@ import java.util.*;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
+
 		Puzzle p = new Puzzle();
-		p.init("103425786");
+		String target = "";
+		for (int i = 0; i < 3; i++) {
+			String[] sp = br.readLine().split(" ");
+			for (int j = 0; j < 3; j++) {
+				target += sp[j];
+			}
+		}
+		p.init(target);
 		System.out.println(p.bfs());
 	}
 
@@ -71,7 +79,7 @@ class Puzzle {
 						}
 					}
 					if (flag) {
-						visit.put(nextState, visit.get(now)+1);
+						visit.put(nextState, visit.get(now) + 1);
 						q.offer(nextState);
 					}
 				}
