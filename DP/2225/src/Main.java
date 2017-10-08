@@ -15,12 +15,15 @@ public class Main {
 		}
 
 		for (int i = 1; i <= k; i++) {
-			dp[i][0] = 1;
-			for (int j = 1; j <= n; j++) {
-				dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+			for (int j = 0; j <= n; j++) {
+				for (int l = 0; l <= j; l++) {
+					dp[i][j] = (dp[i][j] + dp[i - 1][j - l]) % 1000000000;
+				}
 			}
 		}
-
+		// for (int i = 0; i <= k; i++) {
+		// System.out.println(Arrays.toString(dp[i]));
+		// }
 		System.out.println(dp[k][n]);
 	}
 
