@@ -15,39 +15,46 @@ public class Main {
 			arr[i] = Integer.parseInt(sp[i]);
 		}
 		Arrays.sort(arr);
-		System.out.println(Arrays.toString(arr));
+
+		int max = getDiff(arr);
 		while (permutation(arr)) {
-
+			max = Math.max(max, getDiff(arr));
 		}
-
+		System.out.println(max);
 	}
 
 	public static boolean permutation(int[] arr) {
-		int i = arr.length - 1;
-		while (i > 0 && arr[i - 1] >= arr[i]) {
-			i -= 1;
+		int i = -1;
+		for (int k = 1; k < arr.length; k++) {
+			if (arr[k - 1] < arr[k]) {
+				i = k;
+			}
 		}
-		if (i <= 0) {
+		if (i == -1) {
 			return false;
 		}
-		int j = arr.length - 1;
-		while (arr[i - 1] >= arr[j]) {
-			j -= 1;
+		int j = -1;
+		for (int k = i; k < arr.length; k++) {
+			if (arr[i - 1] < arr[k]) {
+				j = k;
+			}
 		}
 
 		int tmp = arr[i - 1];
 		arr[i - 1] = arr[j];
 		arr[j] = tmp;
 
-		while (i < j) {
-			tmp = arr[i];
-			arr[i] = arr[j];
-			arr[j] = tmp;
-			i += 1;
-			j -= 1;
-		}
-		System.out.println(Arrays.toString(arr));
+		Arrays.sort(arr, i, arr.length);
 		return true;
+	}
+
+	public static int getDiff(int[] arr) {
+		int res = 0;
+		int size = arr.length;
+		for (int i = 1; i < size; i++) {
+			res += Math.abs(arr[i] - arr[i - 1]);
+		}
+		return res;
 	}
 
 }
