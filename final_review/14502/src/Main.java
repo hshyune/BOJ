@@ -21,6 +21,7 @@ public class Main {
 		}
 
 		System.out.println(dfs(map));
+
 	}
 
 	public static int dfs(int[][] map) {
@@ -35,14 +36,7 @@ public class Main {
 			tmp[next / m][next % m] = 1;
 		}
 
-		ArrayList<Integer> virusList = new ArrayList<Integer>();
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < m; j++) {
-				if (map[i][j] == 2) {
-					virusList.add(i * n + j);
-				}
-			}
-		}
+		ArrayList<Integer> virusList = findVirus(map);
 
 		int index = 0;
 		int max = Integer.MIN_VALUE;
@@ -55,12 +49,13 @@ public class Main {
 				tmp = copy(map);
 				for (int i = 0; i < 3; i++) {
 					tmp[s.get(i) / m][s.get(i) % m] = 1;
-					// System.out.print(s.get(i) + " ");
 				}
-				// System.out.println(spread(tmp, virusList));
-				// paint
 
-				max = Math.max(max, spread(tmp, virusList));
+				for (int i = 0; i < virusList.size(); i++) {
+					spread(tmp, virusList.get(i));
+				}
+				max = Math.max(countSafe(tmp), max);
+
 				s.pop();
 			} else {
 				if (index + 1 < list.size()) {
@@ -96,38 +91,28 @@ public class Main {
 		return max;
 	}
 
-	public static int spread(int[][] map, ArrayList<Integer> list) {
-		int cnt = 0;
+	public static void spread(int[][] map, int p) {
 		Queue<Integer> q = new LinkedList<Integer>();
-		int[] drow = { 0, 0, 1, -1 };
-		int[] dcol = { 1, -1, 0, 0 };
+		q.add(p);
 
-		for (int i = 0; i < list.size(); i++) {
-			q.add(list.get(i));
-		}
+		int[] drow = { -1, 0, 1, 0 };
+		int[] dcol = { 0, 1, 0, -1 };
 		while (!q.isEmpty()) {
-			int now = q.peek();
-			int row = now / m;
-			int col = now % m;
+			int row = q.peek() / m;
+			int col = q.peek() % m;
 			q.poll();
-
 			for (int i = 0; i < 4; i++) {
 				int nrow = row + drow[i];
 				int ncol = col + dcol[i];
-				if (nrow < 0 || nrow >= n || ncol < 0 || ncol >= m || map[nrow][ncol] != 0) {
+				if (nrow < 0 || nrow >= n || ncol < 0 || ncol >= m) {
 					continue;
 				}
-				q.add((nrow) * m + ncol);
-				map[nrow][ncol] = 2;
+				if (map[nrow][ncol] == 0) {
+					q.add(nrow * m + ncol);
+					map[nrow][ncol] = 2;
+				}
 			}
 		}
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < m; j++) {
-				if (map[i][j] == 0)
-					cnt++;
-			}
-		}
-		return cnt;
 	}
 
 	public static int next(int[][] map) {
@@ -142,16 +127,17 @@ public class Main {
 		return p;
 	}
 
-	public static int findVirus(int[][] map) {
+	public static ArrayList<Integer> findVirus(int[][] map) {
+		ArrayList<Integer> list = new ArrayList<Integer>();
 		int p = -1;
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < m; j++) {
 				if (map[i][j] == 2) {
-					return (i * m) + (j);
+					list.add(i * m + j);
 				}
 			}
 		}
-		return p;
+		return list;
 	}
 
 	public static int[][] copy(int[][] src) {
@@ -173,5 +159,16 @@ public class Main {
 			}
 		}
 		return index;
+	}
+
+	public static int countSafe(int[][] map) {
+		int cnt = 0;
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				if (map[i][j] == 0)
+					cnt++;
+			}
+		}
+		return cnt;
 	}
 }
