@@ -23,21 +23,30 @@ public class Main {
 				map[i][j] = Integer.parseInt(sp[j]);
 			}
 		}
-		int res = Integer.MIN_VALUE;
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < m; j++) {
-				dfs(0, i, j, 0);
+				dfs(0,0,0,0);
 				max = Math.max(cross(i, j), max);
 			}
 		}
-		System.out.println(res);
+		System.out.println(max);
+
 	}
 
 	public static void dfs(int depth, int row, int col, int sum) {
 		if (depth == 4) {
-			System.out.println(depth);
-			sum += map[row][col];
+			// for (int i = 0; i < n; i++) {
+			// for (int j = 0; j < m; j++) {
+			// if (visit[i][j])
+			// System.out.print(1 + " ");
+			// else
+			// System.out.print(0 + " ");
+			// }
+			// System.out.println();
+			// }
+
 			max = Math.max(max, sum);
+			
 			return;
 		}
 
