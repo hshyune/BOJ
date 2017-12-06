@@ -28,7 +28,6 @@ public class Main {
 			for (int j = 1; j < i; j++) {
 				dp[i][j] = Math.max(dp[i - 1][j - 1] + arr[i][j], dp[i - 1][j] + arr[i][j]);
 			}
-			System.out.println(Arrays.toString(dp[i]));
 		}
 
 		int max = Integer.MIN_VALUE;
