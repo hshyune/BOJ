@@ -5,28 +5,22 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 1);
-		OutputStreamWriter out = new OutputStreamWriter(System.out);
-		BufferedWriter bw = new BufferedWriter(out);
-		PrintWriter pw = new PrintWriter(bw);
-		int n = Integer.parseInt(br.readLine());
-		short[] arr = new short[10001];
-		for (int i = 0; i < n; i++) {
-			short num = Short.parseShort(br.readLine());
-			arr[num]++;
+		int[] arr = new int[10001];
+		int size = Integer.parseInt(br.readLine());
+		for (int loop = 0; loop < size; loop++) {
+			int tmp = Integer.parseInt(br.readLine());
+			arr[tmp]++;
 		}
 
-		StringBuffer buffer = new StringBuffer();
-		for (int i = 1; i <= n;) {
-			if (arr[i] == 0)
-				i++;
-			else {
-				arr[i]--;
-				buffer.append(i + "\n");
+		StringBuilder sb = new StringBuilder();
+		for (int loop = 1; loop < 10001; loop++) {
+			if (arr[loop] != 0) {
+				for (int i = 0; i < arr[loop]; i++) {
+					sb.append(loop + "\n");
+				}
 			}
 		}
-		pw.println(buffer);
-		pw.close();
-		br.close();
+		System.out.println(sb.toString());
 	}
 
 }
